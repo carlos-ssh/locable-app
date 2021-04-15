@@ -1,0 +1,50 @@
+<div class="container bg-dark w-25" id="wrapper">
+  <ul class="row navbar-nav bg-gradient-primary sidebar sidebar-dark accordion pl-3" id="accordionSidebar">
+    <%= link_to contacts_path, class: "sidebar-brand d-flex align-items-center justify-content-center"  do %>
+    <div class="sidebar-brand-text mx-3 text-white font-weight-bold"> LOCABLE Dashboard</div>
+    <% end %>
+    <hr class="sidebar-divider my-0">
+    <div class="sidebar-heading"> 
+    </div>
+    <li class="nav-item ">
+      <%= link_to contacts_path, class: "nav-link text-white"  do %>
+        <i class="fas fa-fw fa-tags"></i>
+        <span>Categories</span>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to contacts_path, class: "nav-link text-white"  do %>
+        <i class="fas fa-fw fa-shopping-basket"></i>
+        <span>Vents</span>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to contacts_path, class: "nav-link text-white"  do %>
+        <i class="fas fa-fw fa-users"></i>
+        <span>Marketing Messages</span></a>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to contacts_path, class: "nav-link text-white"  do %>
+        <i class="fas fa-fw fa-truck"></i>
+        <span>Your Website</span>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to contacts_path, class: "nav-link text-white"  do %>
+        <i class="fas fa-fw fa-shopping-cart"></i>
+        <span>CRM</span>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to contacts_path, class: "nav-link text-white"  do %>
+        <i class="fas fa-fw fa-pallet"></i>
+        <span>Companies & Causes</span>
+      <%end%>
+    </li>
+  </ul>
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+    </div>
+  </div>
+</div>

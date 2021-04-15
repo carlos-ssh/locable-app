@@ -28,6 +28,21 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+
+gem 'devise'
+# breadcrumbs for rails https://github.com/weppos/breadcrumbs_on_rails
+gem 'breadcrumbs_on_rails'
+# Simple Form
+gem 'simple_form'
+gem 'activerecord-suppress_range_error'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+
+
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails' 
+gem 'font_awesome5_rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

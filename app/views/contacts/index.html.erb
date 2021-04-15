@@ -1,0 +1,70 @@
+
+
+    <div class="">
+      <h1 class="h3 mb-2 text-gray-800">Contacts Table</h1>
+      <div class="container-fluid d-flex justify-content-between">
+        <%= link_to new_contact_path, { remote: true, class:'btn btn-success btn-sm pt-2'} do %>
+          <span class="fas fa-plus-square">Add new contact</span>
+        <% end %>
+        <a class="btn btn-outline-success" href="#">Import contacts in bulk</a>
+      </div>
+      <br>
+
+      <nav class="navbar navbar-light bg-light">
+        <div class="d-flex pt-1">
+          <p class="pt-2 mr-1">Show</p>
+            <div class="">
+              <select class="form-group form-control" id="exampleFormControlSelect1">
+                <option>10</option>
+                <option>20</option>
+                <option>30</option>
+                <option>40</option>
+                <option>50</option>
+              </select>
+            </div>
+            <p class="navbar-brand ml-1">entries</p>
+        </div>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 btn-sm my-sm-0" type="submit">Copy</button>
+          <button class="btn btn-outline-success my-2 btn-sm my-sm-0" type="submit">CSV</button>
+          <button class="btn btn-outline-success my-2 btn-sm my-sm-0" type="submit">Excel</button>
+          <button class="btn btn-outline-success my-2 btn-sm my-sm-0" type="submit">PDF</button>
+          <button class="btn btn-outline-success my-2 btn-sm my-sm-0" type="submit">Print</button>
+        </form>
+      </nav>
+      <div class="card shadow mb-4">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered w-100" id="ContactsTable" width="100" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Business</th>
+                  <th>Phone</th>
+                  <th>Review</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @contacts.each do |cl| %>
+                  <tr id="contact_<%= cl.id %>">
+                    <td><%= cl.first_name %> <%= cl.last_name %> </td>
+                    <td> <%= cl.email %> </td>
+                    <td> <%= cl.business %> </td>
+                    <td> <%= cl.phone %> </td>
+                    <td> <%= cl.review %> </td>
+                    <td>
+                    <%= link_to "Edit", edit_contact_path(@contacts), html_options = {class:'btn btn btn-sm'} %>
+                    <%= link_to "Delete", cl, remote: true, method: :delete, data: { confirm: "Are you sure?" }, class:'btn btn-danger btn-sm' %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <%= render 'modal_contacts' %>
+    </div>

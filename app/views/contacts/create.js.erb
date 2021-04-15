@@ -1,0 +1,14 @@
+
+$('#modalContacts').modal('toggle');
+$('#tableContacts').append(
+    '<tr id="contact_<%= @contact.id %>" >
+      <td><%= @contact.first_name %> <%= @contact.last_name %></td>
+      <td><%= @contact.email %></td>
+      <td><%= @contact.business %></td>
+      <td><%= @contact.phone %></td>
+      <td>
+        <%= link_to "Edit", edit_contact_path(@contact), html_options = {class: "btn btn-info btn-xs", remote: true} %>
+        <%= link_to "Delete", @contact, remote: true, method: :delete, data: { confirm: "Delete: #{@contact.first_name} #{@contact.last_name}?"}, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>'
+);

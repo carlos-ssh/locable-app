@@ -1,0 +1,54 @@
+<%= form_for @contact, {remote: true, multiple: true } do |f|%>
+  <div class="form-group">
+    <h4 class="control-label">Contact Information: </h4>
+  </div>
+
+  <div class="item form-group<%= @contact.errors[:first_name].any? ? 'has-error has-feedback' : '' %>">
+    <div class="input-group">
+      <%= f.text_field :first_name, {:class=> "form-control", :placeholder=>"First Name"} %>        
+      <%if @contact.errors[:first_name].any? %>
+        <p class="bg-danger"><%= @contact.errors[:first_name].to_s[/\w([^"]*)/] %></p>
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="item form-group<%= @contact.errors[:last_name].any? ? 'has-error has-feedback' : '' %>">
+    <div class="input-group">
+      <%= f.text_field :last_name, {:class=> "form-control", :placeholder=>"Last Name"} %>        
+      <%if @contact.errors[:last_name].any? %>
+        <p class="bg-danger"><%= @contact.errors[:last_name].to_s[/\w([^"]*)/] %></p>
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="item form-group<%= @contact.errors[:email].any? ? 'has-error has-feedback' : '' %>">
+    <div class="input-group">
+      <%= f.text_field :email, {:class=> "form-control", :placeholder=>"Email"} %>        
+      <%if @contact.errors[:email].any? %>
+        <p class="bg-danger"><%= @contact.errors[:email].to_s[/\w([^"]*)/] %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="item form-group<%= @contact.errors[:business].any? ? 'has-error has-feedback' : '' %>">
+    <div class="input-group">
+      <%= f.text_field :business, {:class=> "form-control", :placeholder=>"Business"} %>        
+      <%if @contact.errors[:business].any? %>
+        <p class="bg-danger"><%= @contact.errors[:business].to_s[/\w([^"]*)/] %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="item form-group<%= @contact.errors[:phone].any? ? 'has-error has-feedback' : '' %>">
+    <div class="input-group">
+      <%= f.text_field :phone, {:class=> "form-control", :placeholder=>"Phone"} %>        
+      <%if @contact.errors[:phone].any? %>
+        <p class="bg-danger"><%= @contact.errors[:phone].to_s[/\w([^"]*)/] %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="item form-group<%= @contact.errors[:phone].any? ? 'has-error has-feedback' : '' %>">
+    <%= f.submit @contact.new_record? ? 'Create Contact' : 'Update Contact', :class=> 'btn btn-success btn-sm'%>
+  </div>
+<% end %>
+
+
+
